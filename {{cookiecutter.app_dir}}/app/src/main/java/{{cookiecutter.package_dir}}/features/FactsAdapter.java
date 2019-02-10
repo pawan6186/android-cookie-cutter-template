@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.pawan.androidtemplate.R;
-import com.example.pawan.androidtemplate.databinding.ItemFactBinding;
-import com.example.pawan.androidtemplate.models.Fact;
+import {{cookiecutter.package_name}}.R;
+import {{cookiecutter.package_name}}.databinding.ItemFactBinding;
+import {{cookiecutter.package_dir.replace('/','.')}}.models.Fact;
 import com.google.android.gms.common.util.CollectionUtils;
 
 import java.util.ArrayList;
