@@ -3,5 +3,7 @@
     "app_dir":"{{cookiecutter.app_name.replace(' ', '')}}",
     "package_name":"com.sample.example",
     "package_dir":"{{cookiecutter.package_name.replace('.','/')}}",
-    "launcher_activity_name":"MainActivity"
+    "launcher_activity_name":"MainActivity",
+    "launch_studio": ["false", "true"],
+  	"_copy_without_render": [".gradle", "gradle/", "*gradlew", "*gradlew.bat"]
 }
