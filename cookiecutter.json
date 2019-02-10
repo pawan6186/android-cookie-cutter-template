@@ -1,7 +1,7 @@
 {
     "app_name":"Hello World",
     "app_dir":"{{cookiecutter.app_name.replace(' ', '')}}",
-    "package_name":"com.sample.{{cookiecutter.app_name | replace(' ','') | lower}}",
+    "package_name":"com.sample.example",
     "package_dir":"{{cookiecutter.package_name.replace('.','/')}}",
     "launcher_activity_name":"MainActivity"
 }

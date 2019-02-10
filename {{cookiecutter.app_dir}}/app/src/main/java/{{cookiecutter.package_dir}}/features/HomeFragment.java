@@ -17,6 +17,7 @@ import {{cookiecutter.package_dir.replace('/','.')}}.BaseFragment;
 import {{cookiecutter.package_name}}.databinding.FragmentHomeBinding;
 import {{cookiecutter.package_dir.replace('/','.')}}.models.Fact;
 import {{cookiecutter.package_name}}.R;
+import {{cookiecutter.package_dir.replace('/','.')}}.utils.Utilities;
 
 import java.util.List;
 
