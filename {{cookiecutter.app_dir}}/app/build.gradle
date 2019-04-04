@@ -55,6 +55,7 @@ def getGitLatestTag() {
 
 def config = [
         package          : "{{cookiecutter.package_name}}",
+        testApplicationId: "{{cookiecutter.package_name}}.test",
         compileSdkVersion: 28,
         targetSdkVersion : 28,
         minSdkVersion    : 19,
@@ -67,6 +68,7 @@ android {
     buildToolsVersion '28.0.3'
     defaultConfig {
         applicationId config.package
+        testApplicationId config.testApplicationId
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode getGitCommitCount()
@@ -74,6 +76,49 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
+
+    signingConfigs {
+        dev {
+            storeFile file("${project.rootDir}/keystores/{{ cookiecutter.app_name | replace(' ', '') | lower }}_dev.jks")
+            storePassword propOrEmpty('STORE_PASSWORD')
+            keyAlias '{{ cookiecutter.app_name | replace(' ', '') | lower }}_dev'
+            keyPassword propOrEmpty('KEY_PASSWORD')
+        }
+
+        qa {
+            storeFile file("${project.rootDir}/keystores/{{ cookiecutter.app_name | replace(' ', '') | lower }}_qa.jks")
+            storePassword propOrEmpty('STORE_PASSWORD')
+            keyAlias '{{ cookiecutter.app_name | replace(' ', '') | lower }}_qa'
+            keyPassword propOrEmpty('KEY_PASSWORD')
+        }
+        
+        prod {
+            storeFile file('${project.rootDir}/keystores/{{ cookiecutter.app_name | replace(' ', '') | lower }}_prod.jks')
+            storePassword propOrEmpty('STORE_PASSWORD')
+            keyAlias '{{ cookiecutter.app_name | replace(' ', '') | lower }}_prod'
+            keyPassword propOrEmpty('KEY_PASSWORD')
+        }
+    }
+
+    flavorDimensions "track"
+
+    productFlavors {
+        dev {
+            dimension "track"
+            applicationIdSuffix ".dev"
+            signingConfig signingConfigs.dev
+        }
+        qa {
+            dimension "track"
+            applicationIdSuffix ".qa"
+            signingConfig signingConfigs.qa
+        }
+        prod {
+            dimension "track"
+            signingConfig signingConfigs.prod
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -164,7 +209,4 @@ dependencies {
     debugImplementation "com.squareup.leakcanary:leakcanary-android:${libs.leakCanary}"
     releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakCanary}"
     testImplementation "com.squareup.leakcanary:leakcanary-android-no-op:${libs.leakCanary}"
-
-
-
 }
