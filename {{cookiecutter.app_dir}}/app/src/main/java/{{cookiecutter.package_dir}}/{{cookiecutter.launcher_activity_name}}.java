@@ -11,7 +11,7 @@ public class {{cookiecutter.launcher_activity_name}} extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.{{cookiecutter.launcher_activity_layout_name}}.xml);
+        setContentView(R.layout.{{cookiecutter.launcher_activity_layout_name}});
         getAppComponent().inject(this);
         if(savedInstanceState == null){
             swapFragment(HomeFragment.newInstance(), true, false);
