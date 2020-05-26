@@ -13,8 +13,8 @@ These instructions will get you a copy of the project up and running on your loc
     * Mac OS: `brew install cookiecutter`
     * Debian/Ubuntu: `sudo apt-get install cookiecutter`
 3. [Run cookiecutter against the template:](http://cookiecutter.readthedocs.io/en/latest/usage.html)
-    * Against GitHub repo: `cookiecutter gh:pawan6186/android-cookie-cutter-template`
-      * Specify a branch: `cookiecutter git@github.com:pawan6186/android-cookie-cutter-template.git --checkout {name_of_branch}`
+    * Against GitHub repo: `cookiecutter gh:pawankgupta-se/android-cookie-cutter-template`
+    * Specify a branch: `cookiecutter git@github.com:pawankgupta-se/android-cookie-cutter-template.git --checkout {name_of_branch}`
     * Local copy: `cookiecutter {path/to/android_template_project}`
 
 ## Post Generation
