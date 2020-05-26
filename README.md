@@ -1,6 +1,6 @@
 # Android Template
 
-One Paragraph of project description goes here
+This template contains dependency and integration for allmost all commonly used 3rd party libs, initial project setup for MVVM architecture with jitpack.
 
 ## Getting Started
 
