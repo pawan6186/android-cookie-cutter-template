@@ -2,7 +2,7 @@ package {{cookiecutter.package_dir.replace('/','.')}}.theme;
 
 import android.support.annotation.StyleRes;
 
-import com.example.pawan.androidtemplate.R;
+import {{cookiecutter.package_name}}.R;
 
 public class DefaultThemeLoader implements IThemeLoader {
         @Override

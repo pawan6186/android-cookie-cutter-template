@@ -1,7 +1,7 @@
 package {{cookiecutter.package_dir.replace('/','.')}}.features;
 
 import android.app.Activity;
-import android.arch.lifecycle.Observer;
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,8 +21,6 @@ import {{cookiecutter.package_dir.replace('/','.')}}.utils.Utilities;
 
 import java.lang.ref.WeakReference;
 import java.util.List;
-
-import timber.log.Timber;
 
 public class HomeFragment extends BaseFragment<HomeViewModel> {
     private FragmentHomeBinding mFragmentHomeBinding;

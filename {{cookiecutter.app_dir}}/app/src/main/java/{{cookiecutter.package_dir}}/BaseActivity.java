@@ -42,6 +42,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     @AnimRes
     private static final int POP_EXIT_ANIMATION = R.anim.slide_out_to_bottom;
 
+    private IThemeLoader themeProperties;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         if (BuildConfig.THEME.equals(IThemeLoader.THEME.BLACK)) {
