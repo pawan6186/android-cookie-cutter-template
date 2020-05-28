@@ -17,6 +17,9 @@ import android.support.v7.app.AppCompatActivity;
 import {{cookiecutter.package_name}}.R;
 
 import {{cookiecutter.package_dir.replace('/','.')}}.dependencies.AppComponent;
+import {{cookiecutter.package_dir.replace('/','.')}}.theme.BlackThemeLoader;
+import {{cookiecutter.package_dir.replace('/','.')}}.theme.DefaultThemeLoader;
+import {{cookiecutter.package_dir.replace('/','.')}}.theme.IThemeLoader;
 
 import java.util.Collections;
 import java.util.Set;
@@ -41,6 +44,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        if (BuildConfig.THEME.equals(IThemeLoader.THEME.BLACK)) {
+            themeProperties = new BlackThemeLoader();
+        } else {
+            themeProperties = new DefaultThemeLoader();
+        }
+        setTheme(themeProperties.getApplicationThemeId());
         super.onCreate(savedInstanceState);
     }
 
