@@ -1,4 +1,4 @@
-package com.example.pawan.androidtemplate.features;
+package {{cookiecutter.package_dir.replace('/','.')}}.features;
 
 public interface MainNavigation  {
     void navigateToStyleSheet();
