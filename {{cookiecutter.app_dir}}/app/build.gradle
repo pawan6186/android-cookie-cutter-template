@@ -75,6 +75,7 @@ android {
         versionName getGitLatestTag()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+        buildConfigField "String", 'THEME', "\"Black\""  // Default|Black
     }
 
     signingConfigs {
