@@ -1,87 +1,30 @@
 # Android Template
 
-One Paragraph of project description goes here
+This template contains dependency and integration for allmost all commonly used 3rd party libs, initial project setup for MVVM architecture.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+## Usage
+1. [Install Home Brew:](https://brew.sh)
+    * Mac OS: `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+2. [Install cookiecutter:](http://cookiecutter.readthedocs.io/en/latest/installation.html)
+    * Mac OS: `brew install cookiecutter`
+    * Debian/Ubuntu: `sudo apt-get install cookiecutter`
+3. [Run cookiecutter against the template:](http://cookiecutter.readthedocs.io/en/latest/usage.html)
+    * Against GitHub repo: `cookiecutter gh:wittgroup-inc/android-cookie-cutter-template`
+    * Specify a branch: `cookiecutter git@github.com:wittgroup-inc/android-cookie-cutter-template.git --checkout {name_of_branch}`
+    * Local copy: `cookiecutter {path/to/android_template_project}`
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+## Post Generation
+There are a number things that you still need to take care of to get your newly generated project up and running:
+1. Run Gradle Sync in Android Studio to make sure you can build the project.
+2. Generate 3 keystores for your project:
+    * Generate a keystore for the dev, qa and prod tracks
+    * Make sure to add the actual keystore files to the repository
+    * **DO NOT SAVE THE KEYSTORE CREDENTIALS TO THE REPO, USE 1PASSWORD!**
+    * Utilize the same credentials for all 3 keystores to reduce complexity
+    * Try to follow the convention of app name and build flavor for the alias:
+        * For example: `myapp_dev`, `myapp_qa` and `myaap_prod`
+    * Update the `app/build.gradle` file to reflect these keystore values

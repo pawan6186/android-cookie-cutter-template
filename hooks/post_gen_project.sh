@@ -85,5 +85,5 @@ initialize_git
 #install_or_update_ktlint
 #apply_ktlint_to_project
 #apply_lint_to_project
-#update_project_permissions
+update_project_permissions
 attempt_to_launch_studio
