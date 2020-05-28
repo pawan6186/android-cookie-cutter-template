@@ -5,8 +5,10 @@ import android.os.Bundle;
 import {{cookiecutter.package_name}}.R;
 
 import {{cookiecutter.package_dir.replace('/','.')}}.features.HomeFragment;
+import {{cookiecutter.package_dir.replace('/','.')}}.features.MainNavigation;
+import {{cookiecutter.package_dir.replace('/','.')}}.features.StyleSheetFragment;
 
-public class {{cookiecutter.launcher_activity_name}} extends BaseActivity {
+public class {{cookiecutter.launcher_activity_name}} extends BaseActivity implements MainNavigation {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,5 +23,10 @@ public class {{cookiecutter.launcher_activity_name}} extends BaseActivity {
     @Override
     protected int getContainerId() {
         return R.id.container;
+    }
+
+    @Override
+    public void navigateToStyleSheet() {
+        swapFragment(StyleSheetFragment.newInstance(), true, false);
     }
 }
